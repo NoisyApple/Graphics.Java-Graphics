@@ -1,12 +1,24 @@
 package com.noisyapple;
 
-// App class.
+// App Class.
 public class App {
 
-    // Main method.
-    public static void main(String[] args) {
+  // Main method.
+  public static void main(String[] args) {
 
-        // A new instance of StaticDots class.
-        new StaticDots(500, 500);
-    }
+    // Args handling.
+    if (args.length > 0)
+      switch (args[0]) {
+        case "static":
+          new StaticDots(500, 500);
+          break;
+        case "moving":
+          new MovingDots(500, 500);
+          break;
+      }
+    else
+      System.out.println("No arguments entered, available: \"static\", \"moving\"");
+
+  }
+
 }
